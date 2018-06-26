@@ -1,0 +1,11 @@
+shared:
+  image: node:6
+jobs:
+  firstjob:
+    steps:
+      - fail: command-does-not-exist
+      - teardown-step1: echo hello
+      - teardown-step2: echo world
+    requires:
+      - ~commit
+      - ~pr
